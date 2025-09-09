@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulários📝</title>
+    <style>
+        body{
+            background-color: rgb(197, 196, 196);
+        }
+        form{
+            border: 2px solid black;
+            padding:20px;
+            width: 1000px;
+            height: 600px;
+            background-color: white;
+            font-family:'Arial', 'Helvetica', 'sans-serif'
+        }
+        h1{
+            font-family:'Georgia', 'Times New Roman', 'Times', 'serif';
+        }
+    </style>
+</head>
+<body>
+    <h2>📋Formulário</h2>
+        <form action="cadastro.php" method="post">
+            <p><label>Nome:</label>
+                <input type="text" name="nome" placeholder="Digite seu nome" required>
+            </p>
+            <p><label>E-mail:</label>
+                <input type="email" name="email" placeholder="" required>
+            </p>
+            <p><label>Telefone:</label>
+                <input type="text" name="telefone" pattern="\([0-9]{2}\) [0-9]{5}-[0-9]{4}" placeholder="(99) 99999-9999" required title="Use o formato: (99) 99999-9999">
+            </p>
+            <p><labeL>CEP:</labeL>
+                <input type="text" name="cep" pattern="[0-9]{5}-[0-9]{3}" placeholder="00000-000" required title="Use o formato: 00000-000">
+            </p>
+            <p><label>Senha:</label>
+                <input type="password" name="senha" placeholder="Digite sua senha" required maxlength="8">
+            </p>
+            <!--Espaço para escrever, com  10 linhas(rows) e 100 colunas(cols)-->
+            <p><label>Sobre você:</label>
+                <textarea name="bio" rows="10" cols="100"></textarea>
+            </p>
+            <!--Permite escolher 1 opção-->
+            <p><label>Gênero:</label>
+                <input type="radio" name="genero" value="M">Masculino
+                <input type="radio" name="genero" value="F">Feminino
+            </p>
+            <!--Permite escolher mais de uma opção-->
+            <p><label>Interesses:</label>
+                <input type="checkbox" name="interesses" value="tecnologia">Tecnologia
+                <input type="checkbox" name="interesses" value="esporte">Esporte
+                <input type="checkbox" name="interesses" value="arte">Arte
+            </p>
+            <p><labeL>País:</labeL>
+                <select name="pais">
+                    <option value=""></option>
+                    <option value="brasil">Brasil</option>
+                    <option value="argentina">Argentina</option>
+                    <option value="chile">Chile</option>
+                </select>
+            </p>
+            <p><label>Foto de perfil:</label>
+                <input type="file" name="foto">
+            </p>
+            <input type="submit" value="Enviar">
+            <input type="reset" value="Limpar">
+        </form>
+</body>
+</html>
